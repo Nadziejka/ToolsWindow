@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>deepness_1600.jpg</file>
+        <file>Style.txt</file>
+    </qresource>
+</RCC>
