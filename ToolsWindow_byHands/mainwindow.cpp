@@ -47,6 +47,30 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(button_Save,SIGNAL(clicked()),this, SLOT(close()));
 
+    QLabel *label_Lang = new QLabel(ui->centralWidget);
+    QLabel *label_Color = new QLabel(ui->centralWidget);
+    QLabel *label_Topic = new QLabel(ui->centralWidget);
+    QLabel *label_main = new QLabel(ui->centralWidget);
+
+    label_Lang->setObjectName("label_Lang");
+    label_Color->setObjectName("label_Color");
+    label_Topic->setObjectName("label_Topic");
+    label_main->setObjectName("label_main");
+
+
+    label_Lang->setGeometry(QRect(100, 80, 91, 20));
+    label_Lang->setText(QString::fromUtf8("Язык слов"));
+
+    label_Color->setGeometry(QRect(105, 160, 71, 20));
+    label_Color->setText(QString::fromUtf8("Цвет"));
+
+    label_Topic->setGeometry(QRect(100, 240, 51, 21));
+    label_Topic->setText(QString::fromUtf8("Тема"));
+
+    label_main->setGeometry(QRect(190, 30, 121, 21));
+    label_main->setText(QString::fromUtf8("Настройки"));
+
+
 }
 
 MainWindow::~MainWindow()
