@@ -4,6 +4,13 @@
 #include "QFile"
 #include "QTextStream"
 
+#include <QtGui/QApplication>
+#include <QtGui/QPushButton>
+#include <QtGui/QComboBox>
+#include <QtGui/QLabel>
+#include <QtGui/QListView>
+#include <QtGui/QWidget>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -12,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     if (this->objectName().isEmpty())
     {
-        this->setObjectName(QString::fromUtf8("GameWindow"));
+        this->setObjectName(QString::fromUtf8("ToolsWindow"));
     }
     this->resize(500, 375);
 
@@ -28,6 +35,17 @@ MainWindow::MainWindow(QWidget *parent) :
     inputFile.close();
 
     this->setStyleSheet(str);
+
+    QPushButton *button_toMainMenu = new QPushButton(ui->centralWidget);
+    QPushButton *button_Save = new QPushButton(ui->centralWidget);
+    button_toMainMenu->setObjectName("button_toMainMenu");
+    button_Save->setObjectName("button_Save");
+    button_toMainMenu->setGeometry(20, 310, 171, 41);
+    button_Save->setGeometry(310, 310, 181, 41);
+    button_toMainMenu->setText(QString::fromUtf8("Выход в главное меню"));
+    button_Save->setText(QString::fromUtf8("Сохранить настройки"));
+
+
 }
 
 MainWindow::~MainWindow()
