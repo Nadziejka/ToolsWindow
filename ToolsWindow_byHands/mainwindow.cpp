@@ -45,6 +45,7 @@ MainWindow::MainWindow(QWidget *parent) :
     button_toMainMenu->setText(QString::fromUtf8("Выход в главное меню"));
     button_Save->setText(QString::fromUtf8("Сохранить настройки"));
 
+    connect(button_Save,SIGNAL(clicked()),this, SLOT(close()));
 
 }
 
