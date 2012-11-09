@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QString"
+#include "QStringList"
 #include "QFile"
 #include "QTextStream"
 
@@ -70,7 +71,21 @@ MainWindow::MainWindow(QWidget *parent) :
     label_main->setGeometry(QRect(190, 30, 121, 21));
     label_main->setText(QString::fromUtf8("Настройки"));
 
+    QComboBox *Combo_Lang = new QComboBox(ui->centralWidget);
+    QComboBox *Combo_Color = new QComboBox(ui->centralWidget);
+    QComboBox *Combo_Topic = new QComboBox(ui->centralWidget);
 
+    Combo_Lang->setObjectName("Combo_Lang");
+    Combo_Color->setObjectName("Combo_Color");
+    Combo_Topic->setObjectName("Combo_Topic");
+
+    Combo_Lang->setGeometry(QRect(220, 81, 131, 31));
+    Combo_Color->setGeometry(QRect(218, 151, 131, 31));
+    Combo_Topic->setGeometry(QRect(218, 231, 131, 31));
+
+    Combo_Lang->insertItems(0, QStringList()<<QString::fromUtf8("Русский")<<QString::fromUtf8("English"));
+    Combo_Topic->insertItems(0, QStringList()<<QString::fromUtf8("Еда")<<QString::fromUtf8("География")<<QString::fromUtf8("Культура"));
+    Combo_Color->insertItems(0, QStringList()<<QString::fromUtf8("Черный")<<QString::fromUtf8("Красный")<<QString::fromUtf8("Зеленый")<<QString::fromUtf8("Синий"));
 }
 
 MainWindow::~MainWindow()
